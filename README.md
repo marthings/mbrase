@@ -13,9 +13,9 @@ Using Sass with Compass
 
 Not needed but recommended.
 
-Foundation 5
+Bootstrap 3
 ======
 
-As for now the foundation.scss (which is foundations downloaded css) is included in style.scss. This will change in near future for a better solution.
+The sassy bootstrap 3
   
 
