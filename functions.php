@@ -46,6 +46,13 @@ add_theme_support( 'post-thumbnails' );
 // large thumbnails
 // add_image_size( 'large-thumb', 960, '' );
 
+// Reponsive embeds
+
+function mbrase_embed_html( $html ) {
+    return '<div class="embed-container">' . $html . '</div>';
+}
+add_filter( 'embed_oembed_html', 'mbrase_embed_html', 10, 3 );
+add_filter( 'video_embed_html', 'mbrase_embed_html' );
 
 // Widgets
 
@@ -58,6 +65,5 @@ if(function_exists('register_sidebar')){
 		'after_title' => '</h3>',
 	));
 }
-
 
 ?>
