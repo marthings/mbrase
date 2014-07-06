@@ -6,7 +6,7 @@ project_path = File.expand_path("..",File.dirname(__FILE__))
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "css"
+css_dir = "/"
 sass_dir = "scss"
 images_dir = "images"
 javascripts_dir = "javascripts"
@@ -18,7 +18,7 @@ javascripts_dir = "javascripts"
 # relative_assets = true
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
-# line_comments = false
+line_comments = false
 
 
 # If you prefer the indented syntax, you might want to regenerate this
