@@ -6,13 +6,13 @@
 		<title><?php wp_title(''); ?></title>
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="icon" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/style.css">
+		<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>">
 		<?php wp_head(); ?>
 		<style type="text/css">
 			html{margin:0 !important;}
 		</style>
 	</head>
-	<body>
+	<body <?php body_class($class); ?>> 
 		<header>
 			<div class="navbar">
 				<div class="container">
