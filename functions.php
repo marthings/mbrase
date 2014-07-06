@@ -21,12 +21,8 @@ function mbrase_scripts()
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ),'', '1.0', true );
 	wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.min.js', array( 'jquery' ),'', '1.0', true ); // needs activation
 	wp_enqueue_script( 'magnific', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array( 'jquery' ),'', '1.0', true ); // needs activation
-}  
+}
 add_action( 'wp_enqueue_scripts', 'mbrase_scripts' );
-
-// Custom styles in Wordpress backend editor
-
-add_editor_style('/css/editor-style.css');
 
 // Post formats
 
