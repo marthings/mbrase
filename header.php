@@ -12,7 +12,8 @@
 			html{margin:0 !important;}
 		</style>
 	</head>
-	<body <?php body_class($class); ?>> 
+	<body <?php body_class($class); ?>>
+		<?php do_action("mbrase_before_header"); ?>	
 		<header>
 			<div class="navbar">
 				<div class="container">
@@ -51,4 +52,5 @@
 					</div><!-- /.navbar-collapse -->
 				</div><!-- /. container -->
 			</div><!-- /. navbar -->
-		</header>	
+		</header>
+		<?php do_action("mbrase_after_header"); ?>
