@@ -9,7 +9,7 @@
 // Include ACF in theme
 // Include fields
 
-include_once( get_template_directory() . '/acf/acf-fields.php' );
+// include_once( get_template_directory() . '/acf/acf-fields.php' );
 
 include_once( get_template_directory() . '/acf/acf.php' );
 add_filter('acf/settings/dir', function( $dir ){
