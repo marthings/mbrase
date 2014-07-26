@@ -1,3 +1,26 @@
 <?php get_header(); ?>
-	<?php get_template_part( 'loops/loop', 'single' ); ?>	
+
+	<div><!-- Needs a wrapper if sidebar -->
+
+		<?php do_action("mbrase_before_post"); ?>
+
+		<?php while ( have_posts() ) : the_post(); ?>
+
+			<?php get_template_part( 'content/content', 'single' ); ?>
+			
+			<?php
+				// If comments are open or we have at least one comment, load up the comment template
+				if ( comments_open() || '0' != get_comments_number() ) {
+					comments_template();
+				}
+			?>
+
+		<?php endwhile; // end of the loop. ?>
+		
+		<?php do_action("mbrase_after_post"); ?>
+
+	</div><!-- Needs a wrapper if sidebar -->
+	
+	<?php get_sidebar(); ?>
+	
 <?php get_footer(); ?>

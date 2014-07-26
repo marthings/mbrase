@@ -6,49 +6,61 @@
 //@ mbrase_after/before_footer
 //@ mbrase_after/before_post
 
+// If using woocommerce
+// require( 'inc/woocommerce.php' );
+
+// Include Hooks
+require( 'inc/hooks.php' );
+
+// Include Filters
+require( 'inc/filters.php' );
+
+// Include Widgets
+require( 'inc/widgets.php' );
+
+// Include Custom tags
+require( 'inc/template-tags.php' );
+
 // Include ACF in theme
-// Include fields
-
-// include_once( get_template_directory() . '/acf/acf-fields.php' );
-
-include_once( get_template_directory() . '/acf/acf.php' );
+// Change path to ACF when included in theme
+include_once( get_template_directory() . '/inc/acf/acf.php' );
+include_once( get_template_directory() . '/inc/acf/acf-fields.php' );
 add_filter('acf/settings/dir', function( $dir ){
-		return get_template_directory_uri() . '/acf/';
+		return get_template_directory_uri() . '/inc/acf/';
 });
 add_filter('acf/settings/path', function( $path ){
-		return get_template_directory() . '/acf/';
+		return get_template_directory() . '/inc/acf/';
 });
 
-// Footer options
+// Include custom shortcodes
+require( 'inc/shortcode.php' );
 
-if( function_exists('acf_add_options_sub_page') )
-{
-	acf_add_options_sub_page(array(
-			'title' => 'Sidfot',
-			'parent' => 'options-general.php',
-			'capability' => 'manage_options'
-	));
-}
+// Include walker for bootstrap navigation
+require( 'inc/wp_bootstrap_navwalker.php' );
+
+// Remove update - theme controls the version support
+require( 'inc/disable-wordpress-updates/disable-updates.php' );
 
 // Common options
 
 if( function_exists('acf_add_options_sub_page') )
 {
 	acf_add_options_sub_page(array(
-			'title' => 'Varumärke',
+			'title' => 'Theme options',
 			'parent' => 'options-general.php',
 			'capability' => 'manage_options'
 	));
 }
 
+// Theme defaults
 
 // Menus
 
 if ( function_exists( 'register_nav_menus' ) ) {
 	register_nav_menus(
 		array(
-			'main_menu' => __( 'Main Menu', 'mbrase-nav' ),
-			'secondary_menu' => __( 'Secondary Menu', 'mbrase-nav' ),
+			'primary' => __( 'Primary Menu', 'mbrase' ),
+			'secondary' => __( 'Secondary Menu', 'mbrase' ),
 		)
 	);
 }
@@ -84,35 +96,5 @@ add_theme_support( 'post-thumbnails' );
 	
 // large thumbnails
 // add_image_size( 'large-thumb', 960, '' );
-
-// Reponsive embeds
-
-function mbrase_embed_html( $html ) {
-		return '<div class="embed-container">' . $html . '</div>';
-}
-add_filter( 'embed_oembed_html', 'mbrase_embed_html', 10, 3 );
-add_filter( 'video_embed_html', 'mbrase_embed_html' );
-
-// Widgets
-
-if (function_exists('register_sidebar')) {
-	register_sidebar(array(
-		'name' => 'Blog sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-}
-
-if (function_exists('register_sidebar')) {
-	register_sidebar(array(
-		'name' => 'Front page',
-		'before_widget' => '<div class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-}
 
 ?>
