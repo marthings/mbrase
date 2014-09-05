@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ?>
-No content 
+<?php _e( 'No content', 'mbrase' ); ?>

@@ -1,5 +1,11 @@
-<?php 
-// Uncomment include in functions.php
+<?php
+/**
+*
+* @package mbrase
+* @since version 2.0
+* Uncomment include in functions.php
+*
+*/
 
 // Reponsive embeds
 // http://alxmedia.se/code/2013/10/make-wordpress-default-video-embeds-responsive/
@@ -16,16 +22,16 @@ add_filter( 'video_embed_html', 'mbrase_embed_html' );
 
 function mbrase_thumbnail_upscale( $default, $orig_w, $orig_h, $new_w, $new_h, $crop ){
     if ( !$crop ) return null; // let the wordpress default function handle this
- 
+
     $aspect_ratio = $orig_w / $orig_h;
     $size_ratio = max($new_w / $orig_w, $new_h / $orig_h);
- 
+
     $crop_w = round($new_w / $size_ratio);
     $crop_h = round($new_h / $size_ratio);
- 
+
     $s_x = floor( ($orig_w - $crop_w) / 2 );
     $s_y = floor( ($orig_h - $crop_h) / 2 );
- 
+
     return array( 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h );
 }
 add_filter( 'image_resize_dimensions', 'mbrase_thumbnail_upscale', 10, 6 );

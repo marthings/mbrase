@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+* The template for displaying archive
+*
+* @package mbrase
+* @since version 1.0
+*/
+get_header(); ?>
 
 	<?php if ( have_posts() ) { ?>
 
@@ -28,11 +35,11 @@
 				endif;
 			?>
 		</h1>
-		
+
 		<?php do_action("mbrase_before_post"); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
-		
+
 			<?php get_template_part( 'content/content', get_post_format() ); ?>
 
 		<?php endwhile; ?>
@@ -46,5 +53,5 @@
 		<?php get_template_part( 'content/content', 'none' ); ?>
 
 	<?php } ?>
-	
+
 <?php get_footer(); ?>

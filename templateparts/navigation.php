@@ -1,7 +1,10 @@
 <?php
-
-// Bootstrap 3.0 navigation here
-
+/**
+* Bootstrap navigation with bootstrap navwalker
+*
+* @package mbrase
+* @since version 2.0
+*/
 ?>
 
 <div class="navbar">

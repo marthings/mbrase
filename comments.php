@@ -1,6 +1,10 @@
 <?php
-
-// The template for displaying comments. Needed since 3.0
+/**
+* Comments template
+*
+* @package mbrase
+* @since version 2.0
+*/
 
 if ( post_password_required() ) {
 	return;

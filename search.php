@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+* The template for displaying search results
+*
+* @package mbrase
+* @since version 1.0
+*/
+get_header(); ?>
 
 	<?php if ( have_posts() ) { ?>
 
