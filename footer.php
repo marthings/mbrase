@@ -1,4 +1,4 @@
-		<?php do_action("mbrase_before_header"); ?>
+		<?php do_action("mbrase_before_footer"); ?>
 		<footer>
 
 		</footer>
