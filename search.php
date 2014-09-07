@@ -7,7 +7,11 @@
 */
 get_header(); ?>
 
+<div class="search-wrapper">
+
 	<?php if ( have_posts() ) { ?>
+
+	<div class="search-content">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -23,6 +27,10 @@ get_header(); ?>
 
 	<?php } ?>
 
+	</div><!-- end search-content -->
+
 	<?php get_sidebar(); ?>
+
+</div><!-- end search-wrapper -->
 
 <?php get_footer(); ?>

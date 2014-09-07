@@ -7,7 +7,11 @@
 */
 get_header(); ?>
 
+<div class="archive-wrapper">
+
 	<?php if ( have_posts() ) { ?>
+
+		<div class="archive-content">
 
 		<h1>
 			<?php
@@ -48,10 +52,21 @@ get_header(); ?>
 
 		<?php mbrase_paginate(); ?>
 
+
 	<?php } else { ?>
 
 		<?php get_template_part( 'content/content', 'none' ); ?>
 
 	<?php } ?>
+
+		</div> <!-- end archive-content -->
+
+		<div class="sidebar">
+
+			<?php get_sidebar(); ?>
+
+		</div><!-- end sidebar -->
+
+</div><!-- end archive-wrapper -->
 
 <?php get_footer(); ?>

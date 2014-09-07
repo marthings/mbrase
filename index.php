@@ -7,7 +7,11 @@
 */
 get_header(); ?>
 
+<div class="blog-wrapper">
+
 	<?php if ( have_posts() ) { ?>
+
+		<div class="blog-content">
 
 		<?php do_action("mbrase_before_post"); ?>
 
@@ -23,8 +27,14 @@ get_header(); ?>
 
 	<?php } else { ?>
 
-		<?php get_template_part( 'content/content', 'none' ); ?>
+			<?php get_template_part( 'content/content', 'none' ); ?>
 
 	<?php } ?>
+
+		</div><!-- end archive-content -->
+
+		<?php get_sidebar(); ?>
+
+</div><!-- end blog-wrapper -->
 
 <?php get_footer(); ?>
