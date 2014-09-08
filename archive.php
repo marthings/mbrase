@@ -7,7 +7,7 @@
 */
 get_header(); ?>
 
-<div class="archive-wrapper">
+<div id="primary" class="archive-wrapper">
 
 	<?php if ( have_posts() ) { ?>
 

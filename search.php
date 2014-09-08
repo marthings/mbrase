@@ -7,7 +7,7 @@
 */
 get_header(); ?>
 
-<div class="search-wrapper">
+<div id="primary" class="search-wrapper">
 
 	<?php if ( have_posts() ) { ?>
 

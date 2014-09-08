@@ -7,7 +7,7 @@
 */
 get_header(); ?>
 
-<div class="single-wrapper">
+<div id="primary" class="single-wrapper">
 
 	<div class="single-content">
 

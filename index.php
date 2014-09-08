@@ -7,7 +7,7 @@
 */
 get_header(); ?>
 
-<div class="blog-wrapper">
+<div id="primary" class="blog-wrapper">
 
 	<?php if ( have_posts() ) { ?>
 
