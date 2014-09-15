@@ -9,7 +9,11 @@
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php get_template_part( 'content/content', 'page' ); ?>
+		<div id="primary" class="page-wrapper">
+
+			<?php get_template_part( 'content/content', 'page' ); ?>
+
+		</div><!-- end page-wrapper -->
 
 	<?php endwhile; ?>
 

@@ -30,11 +30,7 @@ get_header(); ?>
 
 	</div><!-- end single-content -->
 
-	<div class="sidebar">
-
 	<?php get_sidebar(); ?>
-
-	</div>
 
 </div><!-- end single-wrapper -->
 
