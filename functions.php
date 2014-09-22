@@ -10,6 +10,7 @@
 //@ mbrase_after/before_header
 //@ mbrase_after/before_footer
 //@ mbrase_after/before_post
+//@ mbrase_after/before_blog
 
 // If using woocommerce
 // require( 'inc/woocommerce.php' );
