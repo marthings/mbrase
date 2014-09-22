@@ -9,6 +9,8 @@ get_header(); ?>
 
 <div id="primary" class="single-wrapper">
 
+	<?php do_action("mbrase_before_blog"); ?>
+
 	<div class="single-content">
 
 	<?php do_action("mbrase_before_post"); ?>
@@ -31,6 +33,8 @@ get_header(); ?>
 	</div><!-- end single-content -->
 
 	<?php get_sidebar(); ?>
+
+	<?php do_action("mbrase_after_blog"); ?>
 
 </div><!-- end single-wrapper -->
 

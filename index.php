@@ -9,6 +9,8 @@ get_header(); ?>
 
 <div id="primary" class="blog-wrapper">
 
+	<?php do_action("mbrase_before_blog"); ?>
+
 	<?php if ( have_posts() ) { ?>
 
 		<div class="blog-content">
@@ -34,6 +36,8 @@ get_header(); ?>
 		</div><!-- end archive-content -->
 
 		<?php get_sidebar(); ?>
+
+	<?php do_action("mbrase_after_blog"); ?>
 
 </div><!-- end blog-wrapper -->
 

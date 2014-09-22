@@ -9,6 +9,8 @@ get_header(); ?>
 
 <div id="primary" class="archive-wrapper">
 
+	<?php do_action("mbrase_before_blog"); ?>
+
 	<?php if ( have_posts() ) { ?>
 
 		<div class="archive-content">
@@ -66,6 +68,8 @@ get_header(); ?>
 			<?php get_sidebar(); ?>
 
 		</div><!-- end sidebar -->
+
+	<?php do_action("mbrase_after_blog"); ?>
 
 </div><!-- end archive-wrapper -->
 
