@@ -7,5 +7,7 @@
 */
 ?>
 <div class="sidebar">
-	<?php dynamic_sidebar(); ?>
+	<div class="sidebar-inner">
+		<?php dynamic_sidebar(); ?>
+	</div><!-- end sidebar-inner -->
 </div><!-- end sidebar -->

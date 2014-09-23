@@ -63,11 +63,7 @@ get_header(); ?>
 
 		</div> <!-- end archive-content -->
 
-		<div class="sidebar">
-
 			<?php get_sidebar(); ?>
-
-		</div><!-- end sidebar -->
 
 	<?php do_action("mbrase_after_blog"); ?>
 
