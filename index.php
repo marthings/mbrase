@@ -7,38 +7,42 @@
 */
 get_header(); ?>
 
-<div id="primary" class="blog-wrapper">
+<div id="primary">
 
-	<?php do_action("mbrase_before_blog"); ?>
+	<div class="blog-wrapper">
 
-	<?php if ( have_posts() ) { ?>
+		<?php do_action("mbrase_before_blog"); ?>
 
-		<div class="blog-content">
+		<?php if ( have_posts() ) { ?>
 
-		<?php do_action("mbrase_before_post"); ?>
+			<div class="blog-content">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+			<?php do_action("mbrase_before_post"); ?>
 
-			<?php get_template_part( 'content/content', get_post_format() ); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php endwhile; ?>
+				<?php get_template_part( 'content/content', get_post_format() ); ?>
 
-		<?php do_action("mbrase_after_post"); ?>
+			<?php endwhile; ?>
 
-		<?php mbrase_paginate(); ?>
+			<?php do_action("mbrase_after_post"); ?>
 
-	<?php } else { ?>
+			<?php mbrase_paginate(); ?>
 
-			<?php get_template_part( 'content/content', 'none' ); ?>
+		<?php } else { ?>
 
-	<?php } ?>
+				<?php get_template_part( 'content/content', 'none' ); ?>
 
-		</div><!-- end archive-content -->
+		<?php } ?>
 
-		<?php get_sidebar(); ?>
+			</div><!-- end archive-content -->
 
-	<?php do_action("mbrase_after_blog"); ?>
+			<?php get_sidebar(); ?>
 
-</div><!-- end blog-wrapper -->
+		<?php do_action("mbrase_after_blog"); ?>
+
+	</div><!-- end blog-wrapper -->
+
+</div><!-- end #primary -->
 
 <?php get_footer(); ?>

@@ -9,11 +9,13 @@
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<div id="primary" class="page-wrapper">
+		<div id="primary">
+			<div class="page-wrapper">
 
-			<?php get_template_part( 'content/content', 'page' ); ?>
+				<?php get_template_part( 'content/content', 'page' ); ?>
 
-		</div><!-- end page-wrapper -->
+			</div><!-- end page-wrapper -->
+		</div><!-- end #primary -->
 
 	<?php endwhile; ?>
 

@@ -7,35 +7,39 @@
 */
 get_header(); ?>
 
-<div id="primary" class="single-wrapper">
+<div id="primary">
 
-	<?php do_action("mbrase_before_blog"); ?>
+	<div class="single-wrapper">
 
-	<div class="single-content">
+		<?php do_action("mbrase_before_blog"); ?>
 
-	<?php do_action("mbrase_before_post"); ?>
+		<div class="single-content">
 
-	<?php while ( have_posts() ) : the_post(); ?>
+		<?php do_action("mbrase_before_post"); ?>
 
-		<?php get_template_part( 'content/content', 'single' ); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php
-			// If comments are open or we have at least one comment, load up the comment template
-			if ( comments_open() || '0' != get_comments_number() ) {
-				comments_template();
-			}
-		?>
+			<?php get_template_part( 'content/content', 'single' ); ?>
 
-	<?php endwhile; // end of the loop. ?>
+			<?php
+				// If comments are open or we have at least one comment, load up the comment template
+				if ( comments_open() || '0' != get_comments_number() ) {
+					comments_template();
+				}
+			?>
 
-	<?php do_action("mbrase_after_post"); ?>
+		<?php endwhile; // end of the loop. ?>
 
-	</div><!-- end single-content -->
+		<?php do_action("mbrase_after_post"); ?>
 
-	<?php get_sidebar(); ?>
+		</div><!-- end single-content -->
 
-	<?php do_action("mbrase_after_blog"); ?>
+		<?php get_sidebar(); ?>
 
-</div><!-- end single-wrapper -->
+		<?php do_action("mbrase_after_blog"); ?>
+
+	</div><!-- end single-wrapper -->
+
+</div><!-- end #primary -->
 
 <?php get_footer(); ?>

@@ -7,66 +7,70 @@
 */
 get_header(); ?>
 
-<div id="primary" class="archive-wrapper">
+<div id="primary">
 
-	<?php do_action("mbrase_before_blog"); ?>
+	<div class="archive-wrapper">
 
-	<?php if ( have_posts() ) { ?>
+		<?php do_action("mbrase_before_blog"); ?>
 
-		<div class="archive-content">
+		<?php if ( have_posts() ) { ?>
 
-		<h1>
-			<?php
-				if ( is_category() ) :
-					single_cat_title();
+			<div class="archive-content">
 
-				elseif ( is_tag() ) :
-					single_tag_title();
+			<h1>
+				<?php
+					if ( is_category() ) :
+						single_cat_title();
 
-				elseif ( is_author() ) :
-					printf( __( 'Author: %s', 'mbrase' ), '<span class="vcard">' . get_the_author() . '</span>' );
+					elseif ( is_tag() ) :
+						single_tag_title();
 
-				elseif ( is_day() ) :
-					printf( __( 'Day: %s', 'mbrase' ), '<span>' . get_the_date() . '</span>' );
+					elseif ( is_author() ) :
+						printf( __( 'Author: %s', 'mbrase' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
-				elseif ( is_month() ) :
-					printf( __( 'Month: %s', 'mbrase' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'mbrase' ) ) . '</span>' );
+					elseif ( is_day() ) :
+						printf( __( 'Day: %s', 'mbrase' ), '<span>' . get_the_date() . '</span>' );
 
-				elseif ( is_year() ) :
-					printf( __( 'Year: %s', 'mbrase' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'mbrase' ) ) . '</span>' );
+					elseif ( is_month() ) :
+						printf( __( 'Month: %s', 'mbrase' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'mbrase' ) ) . '</span>' );
 
-				else :
-					_e( 'Archives', 'mbrase' );
+					elseif ( is_year() ) :
+						printf( __( 'Year: %s', 'mbrase' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'mbrase' ) ) . '</span>' );
 
-				endif;
-			?>
-		</h1>
+					else :
+						_e( 'Archives', 'mbrase' );
 
-		<?php do_action("mbrase_before_post"); ?>
+					endif;
+				?>
+			</h1>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+			<?php do_action("mbrase_before_post"); ?>
 
-			<?php get_template_part( 'content/content', get_post_format() ); ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php endwhile; ?>
+				<?php get_template_part( 'content/content', get_post_format() ); ?>
 
-		<?php do_action("mbrase_after_post"); ?>
+			<?php endwhile; ?>
 
-		<?php mbrase_paginate(); ?>
+			<?php do_action("mbrase_after_post"); ?>
+
+			<?php mbrase_paginate(); ?>
 
 
-	<?php } else { ?>
+		<?php } else { ?>
 
-		<?php get_template_part( 'content/content', 'none' ); ?>
+			<?php get_template_part( 'content/content', 'none' ); ?>
 
-	<?php } ?>
+		<?php } ?>
 
-		</div> <!-- end archive-content -->
+			</div> <!-- end archive-content -->
 
-			<?php get_sidebar(); ?>
+				<?php get_sidebar(); ?>
 
-	<?php do_action("mbrase_after_blog"); ?>
+		<?php do_action("mbrase_after_blog"); ?>
 
-</div><!-- end archive-wrapper -->
+	</div><!-- end archive-wrapper -->
+
+</div><!-- end #primary -->
 
 <?php get_footer(); ?>
